@@ -16,8 +16,8 @@ from apscheduler.triggers.cron import CronTrigger
 import threading
 
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN = "8720485406:AAGGarhFS26QnNHlHXE-XdN9x_W5Hf7lFnM"
-GROQ_API_KEY   = "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"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+GROQ_API_KEY   = os.environ.get("GROQ_API_KEY")
 GROQ_URL       = "https://api.groq.com/openai/v1/chat/completions"
 IST            = ZoneInfo("Asia/Kolkata")
 DB_PATH        = os.path.expanduser("~/nova/nova.db")
