@@ -5,7 +5,7 @@ import random
 import sqlite3
 import httpx
 from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
+import pytz
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Updater, CommandHandler, MessageHandler, CallbackQueryHandler,
@@ -19,7 +19,7 @@ import threading
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 GROQ_API_KEY   = os.environ.get("GROQ_API_KEY")
 GROQ_URL       = "https://api.groq.com/openai/v1/chat/completions"
-IST            = ZoneInfo("Asia/Kolkata")
+IST            = pytz.timezone("Asia/Kolkata")
 DB_PATH        = os.path.expanduser("~/nova/nova.db")
 
 # ─── AI CALL (direct HTTP — no groq library needed) ──────────────────────────
